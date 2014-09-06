@@ -1,0 +1,11 @@
+Temp/
+Obj/
+UnityGenerated/
+/Library/
+
+*.psd
+*.psd.meta
+*.sln
+*.userprefs
+
+*.csproj

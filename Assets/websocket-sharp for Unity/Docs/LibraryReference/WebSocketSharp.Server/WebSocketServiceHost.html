@@ -1,0 +1,466 @@
+<html>
+  <head>
+    <title>WebSocketSharp.Server.WebSocketServiceHost</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      a { text-decoration: none }
+
+      div.SideBar {
+        padding-left: 1em;
+        padding-right: 1em;
+        right: 0;
+        float: right;
+        border: thin solid black;
+        background-color: #f2f2f2;
+      }
+    
+      .CollectionTitle { font-weight: bold }
+      .PageTitle { font-size: 150%; font-weight: bold }
+
+      .Summary { }
+      .Signature { }          
+      .Remarks { }
+      .Members { }
+      .Copyright { }
+      
+      .Section { font-size: 125%; font-weight: bold }
+      p.Summary {
+        margin-left: 1em;
+      }
+      .SectionBox { margin-left: 2em }
+      .NamespaceName { font-size: 105%; font-weight: bold }
+      .NamespaceSumary { }
+      .MemberName { font-size: 115%; font-weight: bold; margin-top: 1em }
+      .Subsection { font-size: 105%; font-weight: bold }
+      .SubsectionBox { margin-left: 2em; margin-bottom: 1em }
+
+      .CodeExampleTable { background-color: #f5f5dd; border: thin solid black; padding: .25em; }
+      
+      .TypesListing {
+        border-collapse: collapse;
+      }
+
+      td {
+        vertical-align: top;
+      }
+      th {
+        text-align: left;
+      }
+
+      .TypesListing td { 
+        margin: 0px;  
+        padding: .25em;
+        border: solid gray 1px;
+      }
+
+      .TypesListing th { 
+        margin: 0px;  
+        padding: .25em;
+        background-color: #f2f2f2;
+        border: solid gray 1px;
+      }
+
+      div.Footer {
+        border-top: 1px solid gray;
+        margin-top: 1.5em;
+        padding-top: 0.6em;
+        text-align: center;
+        color: gray;
+      }
+
+      span.NotEntered /* Documentation for this section has not yet been entered */ {
+        font-style: italic;
+        color: red;	
+      }
+
+      div.Header {
+        background: #B0C4DE;
+        border: double;
+        border-color: white;
+        border-width: 7px;
+        padding: 0.5em;
+      }
+
+      div.Header * {
+        font-size: smaller;
+      }
+
+      div.Note {
+      }
+
+      i.ParamRef {
+      }
+
+      i.subtitle {
+      }
+
+      ul.TypeMembersIndex {
+        text-align: left;
+        background: #F8F8F8;
+      }
+
+      ul.TypeMembersIndex li {
+        display: inline;
+        margin:  0.5em;
+      }
+
+      table.HeaderTable {
+      }
+
+      table.SignatureTable {
+      }
+
+      table.Documentation, table.Enumeration, table.TypeDocumentation {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table.Documentation tr th, table.TypeMembers tr th, table.Enumeration tr th, table.TypeDocumentation tr th {
+        background: whitesmoke;
+        padding: 0.8em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: bottom;
+      }
+
+      table.Documentation tr td, table.TypeMembers tr td, table.Enumeration tr td, table.TypeDocumentation tr td {
+        padding: 0.5em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      table.TypeMembers {
+        border: 1px solid #C0C0C0;
+        width: 100%;
+      }
+
+      table.TypeMembers tr td {
+        background: #F8F8F8;
+        border: white;
+      }
+
+      table.Documentation {
+      }
+
+      table.TypeMembers {
+      }
+
+      div.CodeExample {
+        width: 100%;
+        border: 1px solid #DDDDDD;
+        background-color: #F8F8F8;
+      }
+
+      div.CodeExample p {
+        margin: 0.5em;
+        border-bottom: 1px solid #DDDDDD;
+      }
+
+      div.CodeExample div {
+        margin: 0.5em;
+      }
+
+      h4 {
+        margin-bottom: 0;
+      }
+
+      div.Signature {
+        border: 1px solid #C0C0C0;
+        background: #F2F2F2;
+        padding: 1em;
+      }
+    </style>
+    <script type="text/JavaScript">
+      function toggle_display (block) {
+        var w = document.getElementById (block);
+        var t = document.getElementById (block + ":toggle");
+        if (w.style.display == "none") {
+          w.style.display = "block";
+          t.innerHTML = "⊟";
+        } else {
+          w.style.display = "none";
+          t.innerHTML = "⊞";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <a href="../index.html">websocket-sharp</a> : <a href="index.html">WebSocketSharp.Server Namespace</a></div>
+    <div class="SideBar">
+      <p>
+        <a href="#T:WebSocketSharp.Server.WebSocketServiceHost">Overview</a>
+      </p>
+      <p>
+        <a href="#T:WebSocketSharp.Server.WebSocketServiceHost:Signature">Signature</a>
+      </p>
+      <p>
+        <a href="#T:WebSocketSharp.Server.WebSocketServiceHost:Docs">Remarks</a>
+      </p>
+      <p>
+        <a href="#Members">Members</a>
+      </p>
+      <p>
+        <a href="#T:WebSocketSharp.Server.WebSocketServiceHost:Members">Member Details</a>
+      </p>
+    </div>
+    <h1 class="PageTitle" id="T:WebSocketSharp.Server.WebSocketServiceHost">WebSocketServiceHost  Class</h1>
+    <p class="Summary" id="T:WebSocketSharp.Server.WebSocketServiceHost:Summary">
+            Exposes the methods and properties used for accessing the information in a WebSocket
+            service provided by the <a href="../WebSocketSharp.Server/HttpServer.html">WebSocketSharp.Server.HttpServer</a> or <a href="../WebSocketSharp.Server/WebSocketServer.html">WebSocketSharp.Server.WebSocketServer</a>.
+            </p>
+    <div id="T:WebSocketSharp.Server.WebSocketServiceHost:Signature">
+      <h2>Syntax</h2>
+      <div class="Signature">public abstract class  <b>WebSocketServiceHost</b></div>
+    </div>
+    <div class="Remarks" id="T:WebSocketSharp.Server.WebSocketServiceHost:Docs">
+      <h2 class="Section">Remarks</h2>
+      <div class="SectionBox" id="T:WebSocketSharp.Server.WebSocketServiceHost:Docs:Remarks">
+            The WebSocketServiceHost class is an abstract class.
+            </div>
+      <h2 class="Section">Requirements</h2>
+      <div class="SectionBox" id="T:WebSocketSharp.Server.WebSocketServiceHost:Docs:Version Information">
+        <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+      <h2 class="Section" id="Members">Members</h2>
+      <div class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a>.
+							</p>
+        <h2 class="Section">Protected Constructors</h2>
+        <div class="SectionBox" id="Protected Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:WebSocketSharp.Server.WebSocketServiceHost">WebSocketServiceHost</a>
+                    </b>()</div>
+                </td>
+                <td>
+            Initializes a new instance of the <a href="../WebSocketSharp.Server/WebSocketServiceHost.html">WebSocketSharp.Server.WebSocketServiceHost</a> class.
+            </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Properties</h2>
+        <div class="SectionBox" id="Public Properties">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>abstract </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:WebSocketSharp.Server.WebSocketServiceHost.KeepClean">KeepClean</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. 
+            Gets or sets a value indicating whether the WebSocket service cleans up the inactive
+            sessions periodically.
+            </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div>abstract </div></td>
+                <td>
+                  <b>
+                    <a href="#P:WebSocketSharp.Server.WebSocketServiceHost.Path">Path</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>
+                  </i>. 
+            Gets the path to the WebSocket service.
+            </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div>abstract </div></td>
+                <td>
+                  <b>
+                    <a href="#P:WebSocketSharp.Server.WebSocketServiceHost.Sessions">Sessions</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../WebSocketSharp.Server/WebSocketSessionManager.html">WebSocketSessionManager</a>
+                  </i>. 
+            Gets the access to the sessions in the WebSocket service.
+            </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div>abstract </div></td>
+                <td>
+                  <b>
+                    <a href="#P:WebSocketSharp.Server.WebSocketServiceHost.Type">Type</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Type">Type</a>
+                  </i>. 
+            Gets the type of the WebSocket service.
+            </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Methods</h2>
+        <div class="SectionBox" id="Protected Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>abstract </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketServiceHost.CreateSession">CreateSession</a>
+                  </b>()<nobr> : <a href="../WebSocketSharp.Server/WebSocketService.html">WebSocketService</a></nobr><blockquote>
+            Creates a new session in the WebSocket service.
+            </blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Members" id="T:WebSocketSharp.Server.WebSocketServiceHost:Members">
+      <h2 class="Section" id="MemberDetails">Member Details</h2>
+      <div class="SectionBox" id="_MemberDetails">
+        <h3 id="C:WebSocketSharp.Server.WebSocketServiceHost">WebSocketServiceHost Constructor</h3>
+        <blockquote id="C:WebSocketSharp.Server.WebSocketServiceHost:member">
+          <p class="Summary">
+            Initializes a new instance of the <a href="../WebSocketSharp.Server/WebSocketServiceHost.html">WebSocketSharp.Server.WebSocketServiceHost</a> class.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected  <b>WebSocketServiceHost</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:WebSocketSharp.Server.WebSocketServiceHost:Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:WebSocketSharp.Server.WebSocketServiceHost:Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketServiceHost.CreateSession">CreateSession Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketServiceHost.CreateSession:member">
+          <p class="Summary">
+            Creates a new session in the WebSocket service.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected abstract <a href="../WebSocketSharp.Server/WebSocketService.html">WebSocketService</a> <b>CreateSession</b> ()</div>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketServiceHost.CreateSession:Returns">
+            A <a href="../WebSocketSharp.Server/WebSocketService.html">WebSocketSharp.Server.WebSocketService</a> instance that represents a new session.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketServiceHost.CreateSession:Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketServiceHost.CreateSession:Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:WebSocketSharp.Server.WebSocketServiceHost.KeepClean">KeepClean Property</h3>
+        <blockquote id="P:WebSocketSharp.Server.WebSocketServiceHost.KeepClean:member">
+          <p class="Summary">
+            Gets or sets a value indicating whether the WebSocket service cleans up the inactive
+            sessions periodically.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public abstract <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>KeepClean</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:WebSocketSharp.Server.WebSocketServiceHost.KeepClean:Value">
+            <tt>true</tt> if the WebSocket service cleans up the inactive sessions periodically;
+            otherwise, <tt>false</tt>.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketServiceHost.KeepClean:Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketServiceHost.KeepClean:Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:WebSocketSharp.Server.WebSocketServiceHost.Path">Path Property</h3>
+        <blockquote id="P:WebSocketSharp.Server.WebSocketServiceHost.Path:member">
+          <p class="Summary">
+            Gets the path to the WebSocket service.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public abstract <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> <b>Path</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:WebSocketSharp.Server.WebSocketServiceHost.Path:Value">
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the absolute path to the WebSocket service.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketServiceHost.Path:Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketServiceHost.Path:Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:WebSocketSharp.Server.WebSocketServiceHost.Sessions">Sessions Property</h3>
+        <blockquote id="P:WebSocketSharp.Server.WebSocketServiceHost.Sessions:member">
+          <p class="Summary">
+            Gets the access to the sessions in the WebSocket service.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public abstract <a href="../WebSocketSharp.Server/WebSocketSessionManager.html">WebSocketSessionManager</a> <b>Sessions</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:WebSocketSharp.Server.WebSocketServiceHost.Sessions:Value">
+            A <a href="../WebSocketSharp.Server/WebSocketSessionManager.html">WebSocketSharp.Server.WebSocketSessionManager</a> that manages the sessions.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketServiceHost.Sessions:Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketServiceHost.Sessions:Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:WebSocketSharp.Server.WebSocketServiceHost.Type">Type Property</h3>
+        <blockquote id="P:WebSocketSharp.Server.WebSocketServiceHost.Type:member">
+          <p class="Summary">
+            Gets the type of the WebSocket service.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public abstract <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Type">Type</a> <b>Type</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:WebSocketSharp.Server.WebSocketServiceHost.Type:Value">
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Type">Type</a> that represents the type of the WebSocket service.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketServiceHost.Type:Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketServiceHost.Type:Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+      </div>
+    </div>
+    <hr size="1" />
+    <div class="Copyright">
+    </div>
+  </body>
+</html>

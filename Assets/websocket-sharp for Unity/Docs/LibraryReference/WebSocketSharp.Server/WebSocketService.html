@@ -1,0 +1,1110 @@
+<html>
+  <head>
+    <title>WebSocketSharp.Server.WebSocketService</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      a { text-decoration: none }
+
+      div.SideBar {
+        padding-left: 1em;
+        padding-right: 1em;
+        right: 0;
+        float: right;
+        border: thin solid black;
+        background-color: #f2f2f2;
+      }
+    
+      .CollectionTitle { font-weight: bold }
+      .PageTitle { font-size: 150%; font-weight: bold }
+
+      .Summary { }
+      .Signature { }          
+      .Remarks { }
+      .Members { }
+      .Copyright { }
+      
+      .Section { font-size: 125%; font-weight: bold }
+      p.Summary {
+        margin-left: 1em;
+      }
+      .SectionBox { margin-left: 2em }
+      .NamespaceName { font-size: 105%; font-weight: bold }
+      .NamespaceSumary { }
+      .MemberName { font-size: 115%; font-weight: bold; margin-top: 1em }
+      .Subsection { font-size: 105%; font-weight: bold }
+      .SubsectionBox { margin-left: 2em; margin-bottom: 1em }
+
+      .CodeExampleTable { background-color: #f5f5dd; border: thin solid black; padding: .25em; }
+      
+      .TypesListing {
+        border-collapse: collapse;
+      }
+
+      td {
+        vertical-align: top;
+      }
+      th {
+        text-align: left;
+      }
+
+      .TypesListing td { 
+        margin: 0px;  
+        padding: .25em;
+        border: solid gray 1px;
+      }
+
+      .TypesListing th { 
+        margin: 0px;  
+        padding: .25em;
+        background-color: #f2f2f2;
+        border: solid gray 1px;
+      }
+
+      div.Footer {
+        border-top: 1px solid gray;
+        margin-top: 1.5em;
+        padding-top: 0.6em;
+        text-align: center;
+        color: gray;
+      }
+
+      span.NotEntered /* Documentation for this section has not yet been entered */ {
+        font-style: italic;
+        color: red;	
+      }
+
+      div.Header {
+        background: #B0C4DE;
+        border: double;
+        border-color: white;
+        border-width: 7px;
+        padding: 0.5em;
+      }
+
+      div.Header * {
+        font-size: smaller;
+      }
+
+      div.Note {
+      }
+
+      i.ParamRef {
+      }
+
+      i.subtitle {
+      }
+
+      ul.TypeMembersIndex {
+        text-align: left;
+        background: #F8F8F8;
+      }
+
+      ul.TypeMembersIndex li {
+        display: inline;
+        margin:  0.5em;
+      }
+
+      table.HeaderTable {
+      }
+
+      table.SignatureTable {
+      }
+
+      table.Documentation, table.Enumeration, table.TypeDocumentation {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table.Documentation tr th, table.TypeMembers tr th, table.Enumeration tr th, table.TypeDocumentation tr th {
+        background: whitesmoke;
+        padding: 0.8em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: bottom;
+      }
+
+      table.Documentation tr td, table.TypeMembers tr td, table.Enumeration tr td, table.TypeDocumentation tr td {
+        padding: 0.5em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      table.TypeMembers {
+        border: 1px solid #C0C0C0;
+        width: 100%;
+      }
+
+      table.TypeMembers tr td {
+        background: #F8F8F8;
+        border: white;
+      }
+
+      table.Documentation {
+      }
+
+      table.TypeMembers {
+      }
+
+      div.CodeExample {
+        width: 100%;
+        border: 1px solid #DDDDDD;
+        background-color: #F8F8F8;
+      }
+
+      div.CodeExample p {
+        margin: 0.5em;
+        border-bottom: 1px solid #DDDDDD;
+      }
+
+      div.CodeExample div {
+        margin: 0.5em;
+      }
+
+      h4 {
+        margin-bottom: 0;
+      }
+
+      div.Signature {
+        border: 1px solid #C0C0C0;
+        background: #F2F2F2;
+        padding: 1em;
+      }
+    </style>
+    <script type="text/JavaScript">
+      function toggle_display (block) {
+        var w = document.getElementById (block);
+        var t = document.getElementById (block + ":toggle");
+        if (w.style.display == "none") {
+          w.style.display = "block";
+          t.innerHTML = "⊟";
+        } else {
+          w.style.display = "none";
+          t.innerHTML = "⊞";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <a href="../index.html">websocket-sharp</a> : <a href="index.html">WebSocketSharp.Server Namespace</a></div>
+    <div class="SideBar">
+      <p>
+        <a href="#T:WebSocketSharp.Server.WebSocketService">Overview</a>
+      </p>
+      <p>
+        <a href="#T:WebSocketSharp.Server.WebSocketService:Signature">Signature</a>
+      </p>
+      <p>
+        <a href="#T:WebSocketSharp.Server.WebSocketService:Docs">Remarks</a>
+      </p>
+      <p>
+        <a href="#Members">Members</a>
+      </p>
+      <p>
+        <a href="#T:WebSocketSharp.Server.WebSocketService:Members">Member Details</a>
+      </p>
+    </div>
+    <h1 class="PageTitle" id="T:WebSocketSharp.Server.WebSocketService">WebSocketService  Class</h1>
+    <p class="Summary" id="T:WebSocketSharp.Server.WebSocketService:Summary">
+            Exposes the methods and properties for a WebSocket service provided by the
+            <a href="../WebSocketSharp.Server/HttpServer.html">WebSocketSharp.Server.HttpServer</a> or <a href="../WebSocketSharp.Server/WebSocketServer.html">WebSocketSharp.Server.WebSocketServer</a>.
+            </p>
+    <div id="T:WebSocketSharp.Server.WebSocketService:Signature">
+      <h2>Syntax</h2>
+      <div class="Signature">public abstract class  <b>WebSocketService</b> : <a href="../WebSocketSharp.Server/IWebSocketSession.html">IWebSocketSession</a></div>
+    </div>
+    <div class="Remarks" id="T:WebSocketSharp.Server.WebSocketService:Docs">
+      <h2 class="Section">Remarks</h2>
+      <div class="SectionBox" id="T:WebSocketSharp.Server.WebSocketService:Docs:Remarks">
+            The WebSocketService class is an abstract class.
+            </div>
+      <h2 class="Section">Requirements</h2>
+      <div class="SectionBox" id="T:WebSocketSharp.Server.WebSocketService:Docs:Version Information">
+        <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+      <h2 class="Section" id="Members">Members</h2>
+      <div class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a>.
+							</p>
+        <h2 class="Section">Protected Constructors</h2>
+        <div class="SectionBox" id="Protected Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:WebSocketSharp.Server.WebSocketService">WebSocketService</a>
+                    </b>()</div>
+                </td>
+                <td>
+            Initializes a new instance of the <a href="../WebSocketSharp.Server/WebSocketService.html">WebSocketSharp.Server.WebSocketService</a> class.
+            </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Properties</h2>
+        <div class="SectionBox" id="Public Properties">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:WebSocketSharp.Server.WebSocketService.Context">Context</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../WebSocketSharp.Net.WebSockets/WebSocketContext.html">WebSocketSharp.Net.WebSockets.WebSocketContext</a>
+                  </i>. 
+            Gets the information in the WebSocket connection request.
+            </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:WebSocketSharp.Server.WebSocketService.ID">ID</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>
+                  </i>. 
+            Gets the unique ID of the current session.
+            </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:WebSocketSharp.Server.WebSocketService.Protocol">Protocol</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>
+                  </i>. 
+            Gets or sets the subprotocol of the <a href="../WebSocketSharp/WebSocket.html">WebSocketSharp.WebSocket</a> used in the current session.
+            </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:WebSocketSharp.Server.WebSocketService.StartTime">StartTime</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.DateTime">DateTime</a>
+                  </i>. 
+            Gets the time that the current session has started.
+            </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:WebSocketSharp.Server.WebSocketService.State">State</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../WebSocketSharp/WebSocketState.html">WebSocketSharp.WebSocketState</a>
+                  </i>. 
+            Gets the state of the <a href="../WebSocketSharp/WebSocket.html">WebSocketSharp.WebSocket</a> used in the current session.
+            </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Properties</h2>
+        <div class="SectionBox" id="Protected Properties">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:WebSocketSharp.Server.WebSocketService.Log">Log</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../WebSocketSharp/Logger.html">WebSocketSharp.Logger</a>
+                  </i>. 
+            Gets the logging functions.
+            </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:WebSocketSharp.Server.WebSocketService.Sessions">Sessions</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../WebSocketSharp.Server/WebSocketSessionManager.html">WebSocketSessionManager</a>
+                  </i>. 
+            Gets the access to the sessions in the WebSocket service.
+            </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Methods</h2>
+        <div class="SectionBox" id="Protected Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketService.Error(System.String)">Error</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>)<blockquote>
+            Calls the <a href="../WebSocketSharp.Server/WebSocketService.html#M:WebSocketSharp.Server.WebSocketService.OnError(WebSocketSharp.ErrorEventArgs)">WebSocketService.OnError(WebSocketSharp.ErrorEventArgs)</a> method with the specified <i>message</i>.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketService.OnClose(WebSocketSharp.CloseEventArgs)">OnClose</a>
+                  </b>(<a href="../WebSocketSharp/CloseEventArgs.html">WebSocketSharp.CloseEventArgs</a>)<blockquote>
+            Called when the WebSocket connection used in the current session has been closed.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketService.OnError(WebSocketSharp.ErrorEventArgs)">OnError</a>
+                  </b>(<a href="../WebSocketSharp/ErrorEventArgs.html">WebSocketSharp.ErrorEventArgs</a>)<blockquote>
+            Called when the current session gets an error.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketService.OnMessage(WebSocketSharp.MessageEventArgs)">OnMessage</a>
+                  </b>(<a href="../WebSocketSharp/MessageEventArgs.html">WebSocketSharp.MessageEventArgs</a>)<blockquote>
+            Called when the current session receives a message.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketService.OnOpen">OnOpen</a>
+                  </b>()<blockquote>
+            Called when the WebSocket connection used in the current session has been established.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketService.Send(System.Byte[])">Send</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Byte">byte</a>[])<blockquote>
+            Sends a binary <i>data</i> to the client on the current session.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketService.Send(System.IO.FileInfo)">Send</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IO.FileInfo">System.IO.FileInfo</a>)<blockquote>
+            Sends the specified <i>file</i> as a binary data to the client on the current
+            session.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketService.Send(System.String)">Send</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>)<blockquote>
+            Sends a text <i>data</i> to the client on the current session.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketService.SendAsync(System.Byte[],System.Action{System.Boolean})">SendAsync</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Byte">byte</a>[], <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Action`1">Action&lt;bool&gt;</a>)<blockquote>
+            Sends a binary <i>data</i> asynchronously to the client on the current session.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketService.SendAsync(System.IO.FileInfo,System.Action{System.Boolean})">SendAsync</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IO.FileInfo">System.IO.FileInfo</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Action`1">Action&lt;bool&gt;</a>)<blockquote>
+            Sends the specified <i>file</i> as a binary data asynchronously to the client
+            on the current session.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketService.SendAsync(System.String,System.Action{System.Boolean})">SendAsync</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Action`1">Action&lt;bool&gt;</a>)<blockquote>
+            Sends a text <i>data</i> asynchronously to the client on the current session.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketService.SendAsync(System.IO.Stream,System.Int32,System.Action{System.Boolean})">SendAsync</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IO.Stream">System.IO.Stream</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Action`1">Action&lt;bool&gt;</a>)<blockquote>
+            Sends a binary data from the specified <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IO.Stream">System.IO.Stream</a> asynchronously to the client on
+            the current session.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketService.ValidateCookies(WebSocketSharp.Net.CookieCollection,WebSocketSharp.Net.CookieCollection)">ValidateCookies</a>
+                  </b>(<a href="../WebSocketSharp.Net/CookieCollection.html">WebSocketSharp.Net.CookieCollection</a>, <a href="../WebSocketSharp.Net/CookieCollection.html">WebSocketSharp.Net.CookieCollection</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote>
+            Used to validate the HTTP cookies included in the WebSocket connection request.
+            </blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Members" id="T:WebSocketSharp.Server.WebSocketService:Members">
+      <h2 class="Section" id="MemberDetails">Member Details</h2>
+      <div class="SectionBox" id="_MemberDetails">
+        <h3 id="C:WebSocketSharp.Server.WebSocketService">WebSocketService Constructor</h3>
+        <blockquote id="C:WebSocketSharp.Server.WebSocketService:member">
+          <p class="Summary">
+            Initializes a new instance of the <a href="../WebSocketSharp.Server/WebSocketService.html">WebSocketSharp.Server.WebSocketService</a> class.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected  <b>WebSocketService</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:WebSocketSharp.Server.WebSocketService:Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:WebSocketSharp.Server.WebSocketService:Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:WebSocketSharp.Server.WebSocketService.Context">Context Property</h3>
+        <blockquote id="P:WebSocketSharp.Server.WebSocketService.Context:member">
+          <p class="Summary">
+            Gets the information in the WebSocket connection request.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="../WebSocketSharp.Net.WebSockets/WebSocketContext.html">WebSocketSharp.Net.WebSockets.WebSocketContext</a> <b>Context</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:WebSocketSharp.Server.WebSocketService.Context:Value">
+            A <a href="../WebSocketSharp.Net.WebSockets/WebSocketContext.html">WebSocketSharp.Net.WebSockets.WebSocketContext</a> that provides the access to the WebSocket connection
+            request.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketService.Context:Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketService.Context:Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketService.Error(System.String)">Error Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketService.Error(System.String):member">
+          <p class="Summary">
+            Calls the <a href="../WebSocketSharp.Server/WebSocketService.html#M:WebSocketSharp.Server.WebSocketService.OnError(WebSocketSharp.ErrorEventArgs)">WebSocketService.OnError(WebSocketSharp.ErrorEventArgs)</a> method with the specified <i>message</i>.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Error</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> message)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketService.Error(System.String):Parameters">
+            <dl>
+              <dt>
+                <i>message</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the error message.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.Error(System.String):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.Error(System.String):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:WebSocketSharp.Server.WebSocketService.ID">ID Property</h3>
+        <blockquote id="P:WebSocketSharp.Server.WebSocketService.ID:member">
+          <p class="Summary">
+            Gets the unique ID of the current session.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> <b>ID</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:WebSocketSharp.Server.WebSocketService.ID:Value">
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the unique ID of the current session.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketService.ID:Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketService.ID:Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:WebSocketSharp.Server.WebSocketService.Log">Log Property</h3>
+        <blockquote id="P:WebSocketSharp.Server.WebSocketService.Log:member">
+          <p class="Summary">
+            Gets the logging functions.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected <a href="../WebSocketSharp/Logger.html">WebSocketSharp.Logger</a> <b>Log</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:WebSocketSharp.Server.WebSocketService.Log:Value">
+            A <a href="../WebSocketSharp/Logger.html">WebSocketSharp.Logger</a> that provides the logging functions.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketService.Log:Remarks">
+            This property is available after the WebSocket connection has been established.
+            </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketService.Log:Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketService.OnClose(WebSocketSharp.CloseEventArgs)">OnClose Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketService.OnClose(WebSocketSharp.CloseEventArgs):member">
+          <p class="Summary">
+            Called when the WebSocket connection used in the current session has been closed.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnClose</b> (<a href="../WebSocketSharp/CloseEventArgs.html">WebSocketSharp.CloseEventArgs</a> e)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketService.OnClose(WebSocketSharp.CloseEventArgs):Parameters">
+            <dl>
+              <dt>
+                <i>e</i>
+              </dt>
+              <dd>
+            A <a href="../WebSocketSharp/CloseEventArgs.html">WebSocketSharp.CloseEventArgs</a> that represents the event data received by
+            a <a href="../WebSocketSharp/WebSocket.html#E:WebSocketSharp.WebSocket.OnClose">WebSocketSharp.WebSocket.OnClose</a> event.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.OnClose(WebSocketSharp.CloseEventArgs):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.OnClose(WebSocketSharp.CloseEventArgs):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketService.OnError(WebSocketSharp.ErrorEventArgs)">OnError Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketService.OnError(WebSocketSharp.ErrorEventArgs):member">
+          <p class="Summary">
+            Called when the current session gets an error.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnError</b> (<a href="../WebSocketSharp/ErrorEventArgs.html">WebSocketSharp.ErrorEventArgs</a> e)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketService.OnError(WebSocketSharp.ErrorEventArgs):Parameters">
+            <dl>
+              <dt>
+                <i>e</i>
+              </dt>
+              <dd>
+            A <a href="../WebSocketSharp/ErrorEventArgs.html">WebSocketSharp.ErrorEventArgs</a> that represents the event data received by
+            a <a href="../WebSocketSharp/WebSocket.html#E:WebSocketSharp.WebSocket.OnError">WebSocketSharp.WebSocket.OnError</a> event.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.OnError(WebSocketSharp.ErrorEventArgs):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.OnError(WebSocketSharp.ErrorEventArgs):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketService.OnMessage(WebSocketSharp.MessageEventArgs)">OnMessage Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketService.OnMessage(WebSocketSharp.MessageEventArgs):member">
+          <p class="Summary">
+            Called when the current session receives a message.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnMessage</b> (<a href="../WebSocketSharp/MessageEventArgs.html">WebSocketSharp.MessageEventArgs</a> e)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketService.OnMessage(WebSocketSharp.MessageEventArgs):Parameters">
+            <dl>
+              <dt>
+                <i>e</i>
+              </dt>
+              <dd>
+            A <a href="../WebSocketSharp/MessageEventArgs.html">WebSocketSharp.MessageEventArgs</a> that represents the event data received by
+            a <a href="../WebSocketSharp/WebSocket.html#E:WebSocketSharp.WebSocket.OnMessage">WebSocketSharp.WebSocket.OnMessage</a> event.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.OnMessage(WebSocketSharp.MessageEventArgs):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.OnMessage(WebSocketSharp.MessageEventArgs):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketService.OnOpen">OnOpen Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketService.OnOpen:member">
+          <p class="Summary">
+            Called when the WebSocket connection used in the current session has been established.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>OnOpen</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.OnOpen:Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.OnOpen:Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:WebSocketSharp.Server.WebSocketService.Protocol">Protocol Property</h3>
+        <blockquote id="P:WebSocketSharp.Server.WebSocketService.Protocol:member">
+          <p class="Summary">
+            Gets or sets the subprotocol of the <a href="../WebSocketSharp/WebSocket.html">WebSocketSharp.WebSocket</a> used in the current session.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> <b>Protocol</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:WebSocketSharp.Server.WebSocketService.Protocol:Value">
+            <p>
+              A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the subprotocol of the <a href="../WebSocketSharp/WebSocket.html">WebSocketSharp.WebSocket</a>
+              used in the current session if any.
+              </p>
+            <p>
+              The value to set must be a token defined in
+              RFC 2616.
+              </p>
+            <p>
+              The default value is <a href="http://www.go-mono.com/docs/monodoc.ashx?link=F:System.String.Empty">string.Empty</a>.
+              </p>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketService.Protocol:Remarks">
+            Set operation of this property is available before the WebSocket connection has been
+            established.
+            </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketService.Protocol:Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketService.Send(System.Byte[])">Send Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketService.Send(System.Byte[]):member">
+          <p class="Summary">
+            Sends a binary <i>data</i> to the client on the current session.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Send</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Byte">byte</a>[] data)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketService.Send(System.Byte[]):Parameters">
+            <dl>
+              <dt>
+                <i>data</i>
+              </dt>
+              <dd>
+            An array of <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Byte">byte</a> that represents the binary data to send.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.Send(System.Byte[]):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.Send(System.Byte[]):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketService.Send(System.IO.FileInfo)">Send Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketService.Send(System.IO.FileInfo):member">
+          <p class="Summary">
+            Sends the specified <i>file</i> as a binary data to the client on the current
+            session.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Send</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IO.FileInfo">System.IO.FileInfo</a> file)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketService.Send(System.IO.FileInfo):Parameters">
+            <dl>
+              <dt>
+                <i>file</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IO.FileInfo">System.IO.FileInfo</a> that represents the file to send.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.Send(System.IO.FileInfo):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.Send(System.IO.FileInfo):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketService.Send(System.String)">Send Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketService.Send(System.String):member">
+          <p class="Summary">
+            Sends a text <i>data</i> to the client on the current session.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Send</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> data)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketService.Send(System.String):Parameters">
+            <dl>
+              <dt>
+                <i>data</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the text data to send.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.Send(System.String):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.Send(System.String):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketService.SendAsync(System.Byte[],System.Action{System.Boolean})">SendAsync Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketService.SendAsync(System.Byte[],System.Action{System.Boolean}):member">
+          <p class="Summary">
+            Sends a binary <i>data</i> asynchronously to the client on the current session.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>SendAsync</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Byte">byte</a>[] data, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Action`1">Action&lt;bool&gt;</a> completed)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketService.SendAsync(System.Byte[],System.Action{System.Boolean}):Parameters">
+            <dl>
+              <dt>
+                <i>data</i>
+              </dt>
+              <dd>
+            An array of <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Byte">byte</a> that represents the binary data to send.
+            </dd>
+              <dt>
+                <i>completed</i>
+              </dt>
+              <dd>
+            An Action&lt;bool&gt; delegate that references the method(s) called when the send is
+            complete. A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> passed to this delegate is <tt>true</tt> if the send is
+            complete successfully; otherwise, <tt>false</tt>.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.SendAsync(System.Byte[],System.Action{System.Boolean}):Remarks">
+            This method doesn't wait for the send to be complete.
+            </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.SendAsync(System.Byte[],System.Action{System.Boolean}):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketService.SendAsync(System.IO.FileInfo,System.Action{System.Boolean})">SendAsync Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketService.SendAsync(System.IO.FileInfo,System.Action{System.Boolean}):member">
+          <p class="Summary">
+            Sends the specified <i>file</i> as a binary data asynchronously to the client
+            on the current session.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>SendAsync</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IO.FileInfo">System.IO.FileInfo</a> file, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Action`1">Action&lt;bool&gt;</a> completed)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketService.SendAsync(System.IO.FileInfo,System.Action{System.Boolean}):Parameters">
+            <dl>
+              <dt>
+                <i>file</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IO.FileInfo">System.IO.FileInfo</a> that represents the file to send.
+            </dd>
+              <dt>
+                <i>completed</i>
+              </dt>
+              <dd>
+            An Action&lt;bool&gt; delegate that references the method(s) called when the send is
+            complete. A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> passed to this delegate is <tt>true</tt> if the send is
+            complete successfully; otherwise, <tt>false</tt>.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.SendAsync(System.IO.FileInfo,System.Action{System.Boolean}):Remarks">
+            This method doesn't wait for the send to be complete.
+            </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.SendAsync(System.IO.FileInfo,System.Action{System.Boolean}):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketService.SendAsync(System.String,System.Action{System.Boolean})">SendAsync Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketService.SendAsync(System.String,System.Action{System.Boolean}):member">
+          <p class="Summary">
+            Sends a text <i>data</i> asynchronously to the client on the current session.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>SendAsync</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> data, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Action`1">Action&lt;bool&gt;</a> completed)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketService.SendAsync(System.String,System.Action{System.Boolean}):Parameters">
+            <dl>
+              <dt>
+                <i>data</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the text data to send.
+            </dd>
+              <dt>
+                <i>completed</i>
+              </dt>
+              <dd>
+            An Action&lt;bool&gt; delegate that references the method(s) called when the send is
+            complete. A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> passed to this delegate is <tt>true</tt> if the send is
+            complete successfully; otherwise, <tt>false</tt>.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.SendAsync(System.String,System.Action{System.Boolean}):Remarks">
+            This method doesn't wait for the send to be complete.
+            </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.SendAsync(System.String,System.Action{System.Boolean}):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketService.SendAsync(System.IO.Stream,System.Int32,System.Action{System.Boolean})">SendAsync Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketService.SendAsync(System.IO.Stream,System.Int32,System.Action{System.Boolean}):member">
+          <p class="Summary">
+            Sends a binary data from the specified <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IO.Stream">System.IO.Stream</a> asynchronously to the client on
+            the current session.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>SendAsync</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IO.Stream">System.IO.Stream</a> stream, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> length, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Action`1">Action&lt;bool&gt;</a> completed)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketService.SendAsync(System.IO.Stream,System.Int32,System.Action{System.Boolean}):Parameters">
+            <dl>
+              <dt>
+                <i>stream</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IO.Stream">System.IO.Stream</a> from which contains the binary data to send.
+            </dd>
+              <dt>
+                <i>length</i>
+              </dt>
+              <dd>
+            An <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> that represents the number of bytes to send.
+            </dd>
+              <dt>
+                <i>completed</i>
+              </dt>
+              <dd>
+            An Action&lt;bool&gt; delegate that references the method(s) called when the send is
+            complete. A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> passed to this delegate is <tt>true</tt> if the send is
+            complete successfully; otherwise, <tt>false</tt>.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.SendAsync(System.IO.Stream,System.Int32,System.Action{System.Boolean}):Remarks">
+            This method doesn't wait for the send to be complete.
+            </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.SendAsync(System.IO.Stream,System.Int32,System.Action{System.Boolean}):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:WebSocketSharp.Server.WebSocketService.Sessions">Sessions Property</h3>
+        <blockquote id="P:WebSocketSharp.Server.WebSocketService.Sessions:member">
+          <p class="Summary">
+            Gets the access to the sessions in the WebSocket service.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected <a href="../WebSocketSharp.Server/WebSocketSessionManager.html">WebSocketSessionManager</a> <b>Sessions</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:WebSocketSharp.Server.WebSocketService.Sessions:Value">
+            A <a href="../WebSocketSharp.Server/WebSocketSessionManager.html">WebSocketSharp.Server.WebSocketSessionManager</a> that provides the access to the sessions.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketService.Sessions:Remarks">
+            This property is available after the WebSocket connection has been established.
+            </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketService.Sessions:Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:WebSocketSharp.Server.WebSocketService.StartTime">StartTime Property</h3>
+        <blockquote id="P:WebSocketSharp.Server.WebSocketService.StartTime:member">
+          <p class="Summary">
+            Gets the time that the current session has started.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.DateTime">DateTime</a> <b>StartTime</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:WebSocketSharp.Server.WebSocketService.StartTime:Value">
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.DateTime">DateTime</a> that represents the time that the current session has started.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketService.StartTime:Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketService.StartTime:Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:WebSocketSharp.Server.WebSocketService.State">State Property</h3>
+        <blockquote id="P:WebSocketSharp.Server.WebSocketService.State:member">
+          <p class="Summary">
+            Gets the state of the <a href="../WebSocketSharp/WebSocket.html">WebSocketSharp.WebSocket</a> used in the current session.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="../WebSocketSharp/WebSocketState.html">WebSocketSharp.WebSocketState</a> <b>State</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:WebSocketSharp.Server.WebSocketService.State:Value">
+            One of the <a href="../WebSocketSharp/WebSocketState.html">WebSocketSharp.WebSocketState</a> enum values, indicates the state of the
+            <a href="../WebSocketSharp/WebSocket.html">WebSocketSharp.WebSocket</a> used in the current session.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketService.State:Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketService.State:Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketService.ValidateCookies(WebSocketSharp.Net.CookieCollection,WebSocketSharp.Net.CookieCollection)">ValidateCookies Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketService.ValidateCookies(WebSocketSharp.Net.CookieCollection,WebSocketSharp.Net.CookieCollection):member">
+          <p class="Summary">
+            Used to validate the HTTP cookies included in the WebSocket connection request.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">protected virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>ValidateCookies</b> (<a href="../WebSocketSharp.Net/CookieCollection.html">WebSocketSharp.Net.CookieCollection</a> request, <a href="../WebSocketSharp.Net/CookieCollection.html">WebSocketSharp.Net.CookieCollection</a> response)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketService.ValidateCookies(WebSocketSharp.Net.CookieCollection,WebSocketSharp.Net.CookieCollection):Parameters">
+            <dl>
+              <dt>
+                <i>request</i>
+              </dt>
+              <dd>
+            A <a href="../WebSocketSharp.Net/CookieCollection.html">WebSocketSharp.Net.CookieCollection</a> that contains the cookies to validate.
+            </dd>
+              <dt>
+                <i>response</i>
+              </dt>
+              <dd>
+            A <a href="../WebSocketSharp.Net/CookieCollection.html">WebSocketSharp.Net.CookieCollection</a> that receives the cookies to send to the client.
+            </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketService.ValidateCookies(WebSocketSharp.Net.CookieCollection,WebSocketSharp.Net.CookieCollection):Returns">
+            <tt>true</tt> if the cookies are valid; otherwise, <tt>false</tt>. This method returns
+            <tt>true</tt> as default.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.ValidateCookies(WebSocketSharp.Net.CookieCollection,WebSocketSharp.Net.CookieCollection):Remarks">
+            This method is called when the <a href="../WebSocketSharp/WebSocket.html">WebSocketSharp.WebSocket</a> used in the current session
+            validates the WebSocket connection request.
+            </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketService.ValidateCookies(WebSocketSharp.Net.CookieCollection,WebSocketSharp.Net.CookieCollection):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+      </div>
+    </div>
+    <hr size="1" />
+    <div class="Copyright">
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1408 @@
+<html>
+  <head>
+    <title>WebSocketSharp.Server.WebSocketSessionManager</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      a { text-decoration: none }
+
+      div.SideBar {
+        padding-left: 1em;
+        padding-right: 1em;
+        right: 0;
+        float: right;
+        border: thin solid black;
+        background-color: #f2f2f2;
+      }
+    
+      .CollectionTitle { font-weight: bold }
+      .PageTitle { font-size: 150%; font-weight: bold }
+
+      .Summary { }
+      .Signature { }          
+      .Remarks { }
+      .Members { }
+      .Copyright { }
+      
+      .Section { font-size: 125%; font-weight: bold }
+      p.Summary {
+        margin-left: 1em;
+      }
+      .SectionBox { margin-left: 2em }
+      .NamespaceName { font-size: 105%; font-weight: bold }
+      .NamespaceSumary { }
+      .MemberName { font-size: 115%; font-weight: bold; margin-top: 1em }
+      .Subsection { font-size: 105%; font-weight: bold }
+      .SubsectionBox { margin-left: 2em; margin-bottom: 1em }
+
+      .CodeExampleTable { background-color: #f5f5dd; border: thin solid black; padding: .25em; }
+      
+      .TypesListing {
+        border-collapse: collapse;
+      }
+
+      td {
+        vertical-align: top;
+      }
+      th {
+        text-align: left;
+      }
+
+      .TypesListing td { 
+        margin: 0px;  
+        padding: .25em;
+        border: solid gray 1px;
+      }
+
+      .TypesListing th { 
+        margin: 0px;  
+        padding: .25em;
+        background-color: #f2f2f2;
+        border: solid gray 1px;
+      }
+
+      div.Footer {
+        border-top: 1px solid gray;
+        margin-top: 1.5em;
+        padding-top: 0.6em;
+        text-align: center;
+        color: gray;
+      }
+
+      span.NotEntered /* Documentation for this section has not yet been entered */ {
+        font-style: italic;
+        color: red;	
+      }
+
+      div.Header {
+        background: #B0C4DE;
+        border: double;
+        border-color: white;
+        border-width: 7px;
+        padding: 0.5em;
+      }
+
+      div.Header * {
+        font-size: smaller;
+      }
+
+      div.Note {
+      }
+
+      i.ParamRef {
+      }
+
+      i.subtitle {
+      }
+
+      ul.TypeMembersIndex {
+        text-align: left;
+        background: #F8F8F8;
+      }
+
+      ul.TypeMembersIndex li {
+        display: inline;
+        margin:  0.5em;
+      }
+
+      table.HeaderTable {
+      }
+
+      table.SignatureTable {
+      }
+
+      table.Documentation, table.Enumeration, table.TypeDocumentation {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table.Documentation tr th, table.TypeMembers tr th, table.Enumeration tr th, table.TypeDocumentation tr th {
+        background: whitesmoke;
+        padding: 0.8em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: bottom;
+      }
+
+      table.Documentation tr td, table.TypeMembers tr td, table.Enumeration tr td, table.TypeDocumentation tr td {
+        padding: 0.5em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      table.TypeMembers {
+        border: 1px solid #C0C0C0;
+        width: 100%;
+      }
+
+      table.TypeMembers tr td {
+        background: #F8F8F8;
+        border: white;
+      }
+
+      table.Documentation {
+      }
+
+      table.TypeMembers {
+      }
+
+      div.CodeExample {
+        width: 100%;
+        border: 1px solid #DDDDDD;
+        background-color: #F8F8F8;
+      }
+
+      div.CodeExample p {
+        margin: 0.5em;
+        border-bottom: 1px solid #DDDDDD;
+      }
+
+      div.CodeExample div {
+        margin: 0.5em;
+      }
+
+      h4 {
+        margin-bottom: 0;
+      }
+
+      div.Signature {
+        border: 1px solid #C0C0C0;
+        background: #F2F2F2;
+        padding: 1em;
+      }
+    </style>
+    <script type="text/JavaScript">
+      function toggle_display (block) {
+        var w = document.getElementById (block);
+        var t = document.getElementById (block + ":toggle");
+        if (w.style.display == "none") {
+          w.style.display = "block";
+          t.innerHTML = "⊟";
+        } else {
+          w.style.display = "none";
+          t.innerHTML = "⊞";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <a href="../index.html">websocket-sharp</a> : <a href="index.html">WebSocketSharp.Server Namespace</a></div>
+    <div class="SideBar">
+      <p>
+        <a href="#T:WebSocketSharp.Server.WebSocketSessionManager">Overview</a>
+      </p>
+      <p>
+        <a href="#T:WebSocketSharp.Server.WebSocketSessionManager:Signature">Signature</a>
+      </p>
+      <p>
+        <a href="#T:WebSocketSharp.Server.WebSocketSessionManager:Docs">Remarks</a>
+      </p>
+      <p>
+        <a href="#Members">Members</a>
+      </p>
+      <p>
+        <a href="#T:WebSocketSharp.Server.WebSocketSessionManager:Members">Member Details</a>
+      </p>
+    </div>
+    <h1 class="PageTitle" id="T:WebSocketSharp.Server.WebSocketSessionManager">WebSocketSessionManager  Class</h1>
+    <p class="Summary" id="T:WebSocketSharp.Server.WebSocketSessionManager:Summary">
+            Manages the sessions in a Websocket service.
+            </p>
+    <div id="T:WebSocketSharp.Server.WebSocketSessionManager:Signature">
+      <h2>Syntax</h2>
+      <div class="Signature">public class  <b>WebSocketSessionManager</b></div>
+    </div>
+    <div class="Remarks" id="T:WebSocketSharp.Server.WebSocketSessionManager:Docs">
+      <h2 class="Section">Remarks</h2>
+      <div class="SectionBox" id="T:WebSocketSharp.Server.WebSocketSessionManager:Docs:Remarks">
+        <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+      </div>
+      <h2 class="Section">Requirements</h2>
+      <div class="SectionBox" id="T:WebSocketSharp.Server.WebSocketSessionManager:Docs:Version Information">
+        <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+      <h2 class="Section" id="Members">Members</h2>
+      <div class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a>.
+							</p>
+        <h2 class="Section">Public Properties</h2>
+        <div class="SectionBox" id="Public Properties">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:WebSocketSharp.Server.WebSocketSessionManager.ActiveIDs">ActiveIDs</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Collections.Generic.IEnumerable`1">IEnumerable&lt;string&gt;</a>
+                  </i>. 
+            Gets the collection of every ID of the active sessions in the Websocket service.
+            </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:WebSocketSharp.Server.WebSocketSessionManager.Count">Count</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>
+                  </i>. 
+            Gets the number of the sessions in the Websocket service.
+            </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:WebSocketSharp.Server.WebSocketSessionManager.IDs">IDs</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Collections.Generic.IEnumerable`1">IEnumerable&lt;string&gt;</a>
+                  </i>. 
+            Gets the collection of every ID of the sessions in the Websocket service.
+            </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:WebSocketSharp.Server.WebSocketSessionManager.InactiveIDs">InactiveIDs</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Collections.Generic.IEnumerable`1">IEnumerable&lt;string&gt;</a>
+                  </i>. 
+            Gets the collection of every ID of the inactive sessions in the Websocket service.
+            </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div><i>default property</i></div><div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:WebSocketSharp.Server.WebSocketSessionManager.Item(System.String)">Item</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>)</td>
+                <td>
+                  <i>
+                    <a href="../WebSocketSharp.Server/IWebSocketSession.html">IWebSocketSession</a>
+                  </i>. 
+            Gets the information in a session with the specified <i>id</i> in the WebSocket
+            service.
+            </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:WebSocketSharp.Server.WebSocketSessionManager.KeepClean">KeepClean</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. 
+            Gets a value indicating whether the manager cleans up the inactive sessions periodically.
+            </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:WebSocketSharp.Server.WebSocketSessionManager.Sessions">Sessions</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Collections.Generic.IEnumerable`1">IEnumerable&lt;IWebSocketSession&gt;</a>
+                  </i>. 
+            Gets the collection of every information in the sessions in the Websocket service.
+            </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Methods</h2>
+        <div class="SectionBox" id="Public Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketSessionManager.Broadcast(System.Byte[])">Broadcast</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Byte">byte</a>[])<blockquote>
+            Broadcasts a binary <i>data</i> to every client in the WebSocket service.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketSessionManager.Broadcast(System.String)">Broadcast</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>)<blockquote>
+            Broadcasts a text <i>data</i> to every client in the WebSocket service.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketSessionManager.BroadcastAsync(System.Byte[],System.Action)">BroadcastAsync</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Byte">byte</a>[], <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Action">Action</a>)<blockquote>
+            Broadcasts a binary <i>data</i> asynchronously to every client in the WebSocket
+            service.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketSessionManager.BroadcastAsync(System.String,System.Action)">BroadcastAsync</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Action">Action</a>)<blockquote>
+            Broadcasts a text <i>data</i> asynchronously to every client in the WebSocket
+            service.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketSessionManager.BroadcastAsync(System.IO.Stream,System.Int32,System.Action)">BroadcastAsync</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IO.Stream">System.IO.Stream</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Action">Action</a>)<blockquote>
+            Broadcasts a binary data from the specified <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IO.Stream">System.IO.Stream</a> asynchronously to every
+            client in the WebSocket service.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketSessionManager.Broadping">Broadping</a>
+                  </b>()<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Collections.Generic.Dictionary`2">Dictionary&lt;string, bool&gt;</a></nobr><blockquote>
+            Sends a Ping to every client in the WebSocket service.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketSessionManager.Broadping(System.String)">Broadping</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Collections.Generic.Dictionary`2">Dictionary&lt;string, bool&gt;</a></nobr><blockquote>
+            Sends a Ping with the specified <i>message</i> to every client in the WebSocket
+            service.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketSessionManager.CloseSession(System.String)">CloseSession</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>)<blockquote>
+            Closes the session with the specified <i>id</i>.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketSessionManager.CloseSession(System.String,System.UInt16,System.String)">CloseSession</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.UInt16">ushort</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>)<blockquote>
+            Closes the session with the specified <i>id</i>, <i>code</i>, and
+            <i>reason</i>.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketSessionManager.CloseSession(System.String,WebSocketSharp.CloseStatusCode,System.String)">CloseSession</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="../WebSocketSharp/CloseStatusCode.html">WebSocketSharp.CloseStatusCode</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>)<blockquote>
+            Closes the session with the specified <i>id</i>, <i>code</i>, and
+            <i>reason</i>.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketSessionManager.PingTo(System.String)">PingTo</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote>
+            Sends a Ping to the client on the session with the specified <i>id</i>.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketSessionManager.PingTo(System.String,System.String)">PingTo</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote>
+            Sends a Ping with the specified <i>message</i> to the client on the session
+            with the specified <i>id</i>.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketSessionManager.SendTo(System.String,System.Byte[])">SendTo</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Byte">byte</a>[])<blockquote>
+            Sends a binary <i>data</i> to the client on the session with the specified
+            <i>id</i>.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketSessionManager.SendTo(System.String,System.String)">SendTo</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>)<blockquote>
+            Sends a text <i>data</i> to the client on the session with the specified
+            <i>id</i>.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketSessionManager.SendToAsync(System.String,System.Byte[],System.Action{System.Boolean})">SendToAsync</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Byte">byte</a>[], <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Action`1">Action&lt;bool&gt;</a>)<blockquote>
+            Sends a binary <i>data</i> asynchronously to the client on the session with the
+            specified <i>id</i>.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketSessionManager.SendToAsync(System.String,System.String,System.Action{System.Boolean})">SendToAsync</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Action`1">Action&lt;bool&gt;</a>)<blockquote>
+            Sends a text <i>data</i> asynchronously to the client on the session with the
+            specified <i>id</i>.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketSessionManager.SendToAsync(System.String,System.IO.Stream,System.Int32,System.Action{System.Boolean})">SendToAsync</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IO.Stream">System.IO.Stream</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Action`1">Action&lt;bool&gt;</a>)<blockquote>
+            Sends a binary data from the specified <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IO.Stream">System.IO.Stream</a> asynchronously to the client on
+            the session with the specified <i>id</i>.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketSessionManager.Sweep">Sweep</a>
+                  </b>()<blockquote>
+            Cleans up the inactive sessions in the WebSocket service.
+            </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:WebSocketSharp.Server.WebSocketSessionManager.TryGetSession(System.String,WebSocketSharp.Server.IWebSocketSession@)">TryGetSession</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <i>out</i> <a href="../WebSocketSharp.Server/IWebSocketSession.html">IWebSocketSession</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote>
+            Tries to get the information in a session with the specified <i>id</i> in the
+            WebSocket service.
+            </blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Members" id="T:WebSocketSharp.Server.WebSocketSessionManager:Members">
+      <h2 class="Section" id="MemberDetails">Member Details</h2>
+      <div class="SectionBox" id="_MemberDetails">
+        <h3 id="P:WebSocketSharp.Server.WebSocketSessionManager.ActiveIDs">ActiveIDs Property</h3>
+        <blockquote id="P:WebSocketSharp.Server.WebSocketSessionManager.ActiveIDs:member">
+          <p class="Summary">
+            Gets the collection of every ID of the active sessions in the Websocket service.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Collections.Generic.IEnumerable`1">IEnumerable&lt;string&gt;</a> <b>ActiveIDs</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:WebSocketSharp.Server.WebSocketSessionManager.ActiveIDs:Value">
+            An IEnumerable&lt;string&gt; that contains the collection of every ID of the active
+            sessions.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketSessionManager.ActiveIDs:Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketSessionManager.ActiveIDs:Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketSessionManager.Broadcast(System.Byte[])">Broadcast Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketSessionManager.Broadcast(System.Byte[]):member">
+          <p class="Summary">
+            Broadcasts a binary <i>data</i> to every client in the WebSocket service.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Broadcast</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Byte">byte</a>[] data)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.Broadcast(System.Byte[]):Parameters">
+            <dl>
+              <dt>
+                <i>data</i>
+              </dt>
+              <dd>
+            An array of <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Byte">byte</a> that represents the binary data to broadcast.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.Broadcast(System.Byte[]):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.Broadcast(System.Byte[]):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketSessionManager.Broadcast(System.String)">Broadcast Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketSessionManager.Broadcast(System.String):member">
+          <p class="Summary">
+            Broadcasts a text <i>data</i> to every client in the WebSocket service.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Broadcast</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> data)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.Broadcast(System.String):Parameters">
+            <dl>
+              <dt>
+                <i>data</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the text data to broadcast.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.Broadcast(System.String):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.Broadcast(System.String):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketSessionManager.BroadcastAsync(System.Byte[],System.Action)">BroadcastAsync Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketSessionManager.BroadcastAsync(System.Byte[],System.Action):member">
+          <p class="Summary">
+            Broadcasts a binary <i>data</i> asynchronously to every client in the WebSocket
+            service.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>BroadcastAsync</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Byte">byte</a>[] data, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Action">Action</a> completed)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.BroadcastAsync(System.Byte[],System.Action):Parameters">
+            <dl>
+              <dt>
+                <i>data</i>
+              </dt>
+              <dd>
+            An array of <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Byte">byte</a> that represents the binary data to broadcast.
+            </dd>
+              <dt>
+                <i>completed</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Action">Action</a> delegate that references the method(s) called when the broadcast is
+            complete.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.BroadcastAsync(System.Byte[],System.Action):Remarks">
+            This method doesn't wait for the broadcast to be complete.
+            </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.BroadcastAsync(System.Byte[],System.Action):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketSessionManager.BroadcastAsync(System.String,System.Action)">BroadcastAsync Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketSessionManager.BroadcastAsync(System.String,System.Action):member">
+          <p class="Summary">
+            Broadcasts a text <i>data</i> asynchronously to every client in the WebSocket
+            service.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>BroadcastAsync</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> data, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Action">Action</a> completed)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.BroadcastAsync(System.String,System.Action):Parameters">
+            <dl>
+              <dt>
+                <i>data</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the text data to broadcast.
+            </dd>
+              <dt>
+                <i>completed</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Action">Action</a> delegate that references the method(s) called when the broadcast is
+            complete.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.BroadcastAsync(System.String,System.Action):Remarks">
+            This method doesn't wait for the broadcast to be complete.
+            </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.BroadcastAsync(System.String,System.Action):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketSessionManager.BroadcastAsync(System.IO.Stream,System.Int32,System.Action)">BroadcastAsync Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketSessionManager.BroadcastAsync(System.IO.Stream,System.Int32,System.Action):member">
+          <p class="Summary">
+            Broadcasts a binary data from the specified <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IO.Stream">System.IO.Stream</a> asynchronously to every
+            client in the WebSocket service.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>BroadcastAsync</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IO.Stream">System.IO.Stream</a> stream, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> length, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Action">Action</a> completed)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.BroadcastAsync(System.IO.Stream,System.Int32,System.Action):Parameters">
+            <dl>
+              <dt>
+                <i>stream</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IO.Stream">System.IO.Stream</a> from which contains the binary data to broadcast.
+            </dd>
+              <dt>
+                <i>length</i>
+              </dt>
+              <dd>
+            An <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> that represents the number of bytes to broadcast.
+            </dd>
+              <dt>
+                <i>completed</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Action">Action</a> delegate that references the method(s) called when the broadcast is
+            complete.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.BroadcastAsync(System.IO.Stream,System.Int32,System.Action):Remarks">
+            This method doesn't wait for the broadcast to be complete.
+            </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.BroadcastAsync(System.IO.Stream,System.Int32,System.Action):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketSessionManager.Broadping">Broadping Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketSessionManager.Broadping:member">
+          <p class="Summary">
+            Sends a Ping to every client in the WebSocket service.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Collections.Generic.Dictionary`2">Dictionary&lt;string, bool&gt;</a> <b>Broadping</b> ()</div>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.Broadping:Returns">
+            A Dictionary&lt;string, bool&gt; that contains the collection of pairs of session ID and
+            value indicating whether the manager received a Pong from every client in a time.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.Broadping:Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.Broadping:Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketSessionManager.Broadping(System.String)">Broadping Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketSessionManager.Broadping(System.String):member">
+          <p class="Summary">
+            Sends a Ping with the specified <i>message</i> to every client in the WebSocket
+            service.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Collections.Generic.Dictionary`2">Dictionary&lt;string, bool&gt;</a> <b>Broadping</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> message)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.Broadping(System.String):Parameters">
+            <dl>
+              <dt>
+                <i>message</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the message to send.
+            </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.Broadping(System.String):Returns">
+            A Dictionary&lt;string, bool&gt; that contains the collection of pairs of session ID and
+            value indicating whether the manager received a Pong from every client in a time.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.Broadping(System.String):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.Broadping(System.String):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketSessionManager.CloseSession(System.String)">CloseSession Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketSessionManager.CloseSession(System.String):member">
+          <p class="Summary">
+            Closes the session with the specified <i>id</i>.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>CloseSession</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> id)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.CloseSession(System.String):Parameters">
+            <dl>
+              <dt>
+                <i>id</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the ID of the session to close.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.CloseSession(System.String):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.CloseSession(System.String):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketSessionManager.CloseSession(System.String,System.UInt16,System.String)">CloseSession Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketSessionManager.CloseSession(System.String,System.UInt16,System.String):member">
+          <p class="Summary">
+            Closes the session with the specified <i>id</i>, <i>code</i>, and
+            <i>reason</i>.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>CloseSession</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> id, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.UInt16">ushort</a> code, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> reason)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.CloseSession(System.String,System.UInt16,System.String):Parameters">
+            <dl>
+              <dt>
+                <i>id</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the ID of the session to close.
+            </dd>
+              <dt>
+                <i>code</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.UInt16">ushort</a> that represents the status code indicating the reason for closure.
+            </dd>
+              <dt>
+                <i>reason</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the reason for closure.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.CloseSession(System.String,System.UInt16,System.String):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.CloseSession(System.String,System.UInt16,System.String):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketSessionManager.CloseSession(System.String,WebSocketSharp.CloseStatusCode,System.String)">CloseSession Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketSessionManager.CloseSession(System.String,WebSocketSharp.CloseStatusCode,System.String):member">
+          <p class="Summary">
+            Closes the session with the specified <i>id</i>, <i>code</i>, and
+            <i>reason</i>.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>CloseSession</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> id, <a href="../WebSocketSharp/CloseStatusCode.html">WebSocketSharp.CloseStatusCode</a> code, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> reason)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.CloseSession(System.String,WebSocketSharp.CloseStatusCode,System.String):Parameters">
+            <dl>
+              <dt>
+                <i>id</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the ID of the session to close.
+            </dd>
+              <dt>
+                <i>code</i>
+              </dt>
+              <dd>
+            One of the <a href="../WebSocketSharp/CloseStatusCode.html">WebSocketSharp.CloseStatusCode</a> enum values, represents the status code indicating
+            the reason for closure.
+            </dd>
+              <dt>
+                <i>reason</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the reason for closure.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.CloseSession(System.String,WebSocketSharp.CloseStatusCode,System.String):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.CloseSession(System.String,WebSocketSharp.CloseStatusCode,System.String):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:WebSocketSharp.Server.WebSocketSessionManager.Count">Count Property</h3>
+        <blockquote id="P:WebSocketSharp.Server.WebSocketSessionManager.Count:member">
+          <p class="Summary">
+            Gets the number of the sessions in the Websocket service.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> <b>Count</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:WebSocketSharp.Server.WebSocketSessionManager.Count:Value">
+            An <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> that represents the number of the sessions.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketSessionManager.Count:Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketSessionManager.Count:Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:WebSocketSharp.Server.WebSocketSessionManager.IDs">IDs Property</h3>
+        <blockquote id="P:WebSocketSharp.Server.WebSocketSessionManager.IDs:member">
+          <p class="Summary">
+            Gets the collection of every ID of the sessions in the Websocket service.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Collections.Generic.IEnumerable`1">IEnumerable&lt;string&gt;</a> <b>IDs</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:WebSocketSharp.Server.WebSocketSessionManager.IDs:Value">
+            An IEnumerable&lt;string&gt; that contains the collection of every ID of the sessions.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketSessionManager.IDs:Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketSessionManager.IDs:Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:WebSocketSharp.Server.WebSocketSessionManager.InactiveIDs">InactiveIDs Property</h3>
+        <blockquote id="P:WebSocketSharp.Server.WebSocketSessionManager.InactiveIDs:member">
+          <p class="Summary">
+            Gets the collection of every ID of the inactive sessions in the Websocket service.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Collections.Generic.IEnumerable`1">IEnumerable&lt;string&gt;</a> <b>InactiveIDs</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:WebSocketSharp.Server.WebSocketSessionManager.InactiveIDs:Value">
+            An IEnumerable&lt;string&gt; that contains the collection of every ID of the inactive
+            sessions.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketSessionManager.InactiveIDs:Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketSessionManager.InactiveIDs:Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:WebSocketSharp.Server.WebSocketSessionManager.Item(System.String)">Item Property</h3>
+        <blockquote id="P:WebSocketSharp.Server.WebSocketSessionManager.Item(System.String):member">
+          <p class="Summary">
+            Gets the information in a session with the specified <i>id</i> in the WebSocket
+            service.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">
+            <p>
+              <i>This is the default property for this class.</i>
+            </p>public <a href="../WebSocketSharp.Server/IWebSocketSession.html">IWebSocketSession</a> this [<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> id] { get; }</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="P:WebSocketSharp.Server.WebSocketSessionManager.Item(System.String):Parameters">
+            <dl>
+              <dt>
+                <i>id</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the ID of the session to find.
+            </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:WebSocketSharp.Server.WebSocketSessionManager.Item(System.String):Value">
+            A <a href="../WebSocketSharp.Server/IWebSocketSession.html">WebSocketSharp.Server.IWebSocketSession</a> instance that provides the access to the session if it's
+            successfully found; otherwise, <tt>null</tt>.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketSessionManager.Item(System.String):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketSessionManager.Item(System.String):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:WebSocketSharp.Server.WebSocketSessionManager.KeepClean">KeepClean Property</h3>
+        <blockquote id="P:WebSocketSharp.Server.WebSocketSessionManager.KeepClean:member">
+          <p class="Summary">
+            Gets a value indicating whether the manager cleans up the inactive sessions periodically.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>KeepClean</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:WebSocketSharp.Server.WebSocketSessionManager.KeepClean:Value">
+            <tt>true</tt> if the manager cleans up the inactive sessions every 60 seconds; otherwise,
+            <tt>false</tt>.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketSessionManager.KeepClean:Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketSessionManager.KeepClean:Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketSessionManager.PingTo(System.String)">PingTo Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketSessionManager.PingTo(System.String):member">
+          <p class="Summary">
+            Sends a Ping to the client on the session with the specified <i>id</i>.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>PingTo</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> id)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.PingTo(System.String):Parameters">
+            <dl>
+              <dt>
+                <i>id</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the ID of the session to find.
+            </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.PingTo(System.String):Returns">
+            <tt>true</tt> if the manager receives a Pong from the client in a time; otherwise,
+            <tt>false</tt>.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.PingTo(System.String):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.PingTo(System.String):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketSessionManager.PingTo(System.String,System.String)">PingTo Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketSessionManager.PingTo(System.String,System.String):member">
+          <p class="Summary">
+            Sends a Ping with the specified <i>message</i> to the client on the session
+            with the specified <i>id</i>.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>PingTo</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> id, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> message)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.PingTo(System.String,System.String):Parameters">
+            <dl>
+              <dt>
+                <i>id</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the ID of the session to find.
+            </dd>
+              <dt>
+                <i>message</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the message to send.
+            </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.PingTo(System.String,System.String):Returns">
+            <tt>true</tt> if the manager receives a Pong from the client in a time; otherwise,
+            <tt>false</tt>.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.PingTo(System.String,System.String):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.PingTo(System.String,System.String):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketSessionManager.SendTo(System.String,System.Byte[])">SendTo Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketSessionManager.SendTo(System.String,System.Byte[]):member">
+          <p class="Summary">
+            Sends a binary <i>data</i> to the client on the session with the specified
+            <i>id</i>.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>SendTo</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> id, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Byte">byte</a>[] data)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.SendTo(System.String,System.Byte[]):Parameters">
+            <dl>
+              <dt>
+                <i>id</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the ID of the session to find.
+            </dd>
+              <dt>
+                <i>data</i>
+              </dt>
+              <dd>
+            An array of <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Byte">byte</a> that represents the binary data to send.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.SendTo(System.String,System.Byte[]):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.SendTo(System.String,System.Byte[]):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketSessionManager.SendTo(System.String,System.String)">SendTo Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketSessionManager.SendTo(System.String,System.String):member">
+          <p class="Summary">
+            Sends a text <i>data</i> to the client on the session with the specified
+            <i>id</i>.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>SendTo</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> id, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> data)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.SendTo(System.String,System.String):Parameters">
+            <dl>
+              <dt>
+                <i>id</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the ID of the session to find.
+            </dd>
+              <dt>
+                <i>data</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the text data to send.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.SendTo(System.String,System.String):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.SendTo(System.String,System.String):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketSessionManager.SendToAsync(System.String,System.Byte[],System.Action{System.Boolean})">SendToAsync Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketSessionManager.SendToAsync(System.String,System.Byte[],System.Action{System.Boolean}):member">
+          <p class="Summary">
+            Sends a binary <i>data</i> asynchronously to the client on the session with the
+            specified <i>id</i>.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>SendToAsync</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> id, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Byte">byte</a>[] data, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Action`1">Action&lt;bool&gt;</a> completed)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.SendToAsync(System.String,System.Byte[],System.Action{System.Boolean}):Parameters">
+            <dl>
+              <dt>
+                <i>id</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the ID of the session to find.
+            </dd>
+              <dt>
+                <i>data</i>
+              </dt>
+              <dd>
+            An array of <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Byte">byte</a> that represents the binary data to send.
+            </dd>
+              <dt>
+                <i>completed</i>
+              </dt>
+              <dd>
+            An Action&lt;bool&gt; delegate that references the method(s) called when the send is
+            complete. A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> passed to this delegate is <tt>true</tt> if the send is
+            complete successfully; otherwise, <tt>false</tt>.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.SendToAsync(System.String,System.Byte[],System.Action{System.Boolean}):Remarks">
+            This method doesn't wait for the send to be complete.
+            </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.SendToAsync(System.String,System.Byte[],System.Action{System.Boolean}):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketSessionManager.SendToAsync(System.String,System.String,System.Action{System.Boolean})">SendToAsync Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketSessionManager.SendToAsync(System.String,System.String,System.Action{System.Boolean}):member">
+          <p class="Summary">
+            Sends a text <i>data</i> asynchronously to the client on the session with the
+            specified <i>id</i>.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>SendToAsync</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> id, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> data, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Action`1">Action&lt;bool&gt;</a> completed)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.SendToAsync(System.String,System.String,System.Action{System.Boolean}):Parameters">
+            <dl>
+              <dt>
+                <i>id</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the ID of the session to find.
+            </dd>
+              <dt>
+                <i>data</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the text data to send.
+            </dd>
+              <dt>
+                <i>completed</i>
+              </dt>
+              <dd>
+            An Action&lt;bool&gt; delegate that references the method(s) called when the send is
+            complete. A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> passed to this delegate is <tt>true</tt> if the send is
+            complete successfully; otherwise, <tt>false</tt>.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.SendToAsync(System.String,System.String,System.Action{System.Boolean}):Remarks">
+            This method doesn't wait for the send to be complete.
+            </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.SendToAsync(System.String,System.String,System.Action{System.Boolean}):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketSessionManager.SendToAsync(System.String,System.IO.Stream,System.Int32,System.Action{System.Boolean})">SendToAsync Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketSessionManager.SendToAsync(System.String,System.IO.Stream,System.Int32,System.Action{System.Boolean}):member">
+          <p class="Summary">
+            Sends a binary data from the specified <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IO.Stream">System.IO.Stream</a> asynchronously to the client on
+            the session with the specified <i>id</i>.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>SendToAsync</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> id, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IO.Stream">System.IO.Stream</a> stream, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> length, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Action`1">Action&lt;bool&gt;</a> completed)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.SendToAsync(System.String,System.IO.Stream,System.Int32,System.Action{System.Boolean}):Parameters">
+            <dl>
+              <dt>
+                <i>id</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the ID of the session to find.
+            </dd>
+              <dt>
+                <i>stream</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IO.Stream">System.IO.Stream</a> from which contains the binary data to send.
+            </dd>
+              <dt>
+                <i>length</i>
+              </dt>
+              <dd>
+            An <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> that represents the number of bytes to send.
+            </dd>
+              <dt>
+                <i>completed</i>
+              </dt>
+              <dd>
+            An Action&lt;bool&gt; delegate that references the method(s) called when the send is
+            complete. A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> passed to this delegate is <tt>true</tt> if the send is
+            complete successfully; otherwise, <tt>false</tt>.
+            </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.SendToAsync(System.String,System.IO.Stream,System.Int32,System.Action{System.Boolean}):Remarks">
+            This method doesn't wait for the send to be complete.
+            </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.SendToAsync(System.String,System.IO.Stream,System.Int32,System.Action{System.Boolean}):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:WebSocketSharp.Server.WebSocketSessionManager.Sessions">Sessions Property</h3>
+        <blockquote id="P:WebSocketSharp.Server.WebSocketSessionManager.Sessions:member">
+          <p class="Summary">
+            Gets the collection of every information in the sessions in the Websocket service.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Collections.Generic.IEnumerable`1">IEnumerable&lt;IWebSocketSession&gt;</a> <b>Sessions</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:WebSocketSharp.Server.WebSocketSessionManager.Sessions:Value">
+            An IEnumerable&lt;IWebSocketSession&gt; that contains the collection of every information
+            in the sessions.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketSessionManager.Sessions:Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:WebSocketSharp.Server.WebSocketSessionManager.Sessions:Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketSessionManager.Sweep">Sweep Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketSessionManager.Sweep:member">
+          <p class="Summary">
+            Cleans up the inactive sessions in the WebSocket service.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Sweep</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.Sweep:Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.Sweep:Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:WebSocketSharp.Server.WebSocketSessionManager.TryGetSession(System.String,WebSocketSharp.Server.IWebSocketSession@)">TryGetSession Method</h3>
+        <blockquote id="M:WebSocketSharp.Server.WebSocketSessionManager.TryGetSession(System.String,WebSocketSharp.Server.IWebSocketSession@):member">
+          <p class="Summary">
+            Tries to get the information in a session with the specified <i>id</i> in the
+            WebSocket service.
+            </p>
+          <h2>Syntax</h2>
+          <div class="Signature">public <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>TryGetSession</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> id, <i>out</i> <a href="../WebSocketSharp.Server/IWebSocketSession.html">IWebSocketSession</a> session)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.TryGetSession(System.String,WebSocketSharp.Server.IWebSocketSession@):Parameters">
+            <dl>
+              <dt>
+                <i>id</i>
+              </dt>
+              <dd>
+            A <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> that represents the ID of the session to find.
+            </dd>
+              <dt>
+                <i>session</i>
+              </dt>
+              <dd>
+            When this method returns, a <a href="../WebSocketSharp.Server/IWebSocketSession.html">WebSocketSharp.Server.IWebSocketSession</a> instance that provides the
+            access to the session if it's successfully found; otherwise, <tt>null</tt>. This
+            parameter is passed uninitialized.
+            </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.TryGetSession(System.String,WebSocketSharp.Server.IWebSocketSession@):Returns">
+            <tt>true</tt> if the session is successfully found; otherwise, <tt>false</tt>.
+            </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.TryGetSession(System.String,WebSocketSharp.Server.IWebSocketSession@):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:WebSocketSharp.Server.WebSocketSessionManager.TryGetSession(System.String,WebSocketSharp.Server.IWebSocketSession@):Version Information">
+            <b>Namespace: </b>WebSocketSharp.Server<br /><b>Assembly: </b>websocket-sharp (in websocket-sharp.dll)</div>
+          <hr size="1" />
+        </blockquote>
+      </div>
+    </div>
+    <hr size="1" />
+    <div class="Copyright">
+    </div>
+  </body>
+</html>

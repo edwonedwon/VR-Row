@@ -2,8 +2,7 @@ Temp/
 Obj/
 UnityGenerated/
 /Library/
-/Assets/Standard Assets/
-/Assets/Editor/
+
 
 *.psd
 *.psd.meta

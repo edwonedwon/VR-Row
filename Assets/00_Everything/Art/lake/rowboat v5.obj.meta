@@ -1,15 +1,35 @@
 fileFormatVersion: 2
-guid: 0af01990115874ddc8408322f4d9d4c9
+guid: 0f4ad51392d754ca4a5a6450828f468a
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: lake_islands
-    400000: //RootNode
-    400002: lake_islands
-    2300000: lake_islands
-    3300000: lake_islands
-    4300000: lake_islands
+    100000: boat
+    100002: boat_rigger
+    100004: oar
+    100006: oar_handle
+    100008: oar_paddle
+    100010: //RootNode
+    400000: boat
+    400002: boat_rigger
+    400004: oar
+    400006: oar_handle
+    400008: oar_paddle
+    400010: //RootNode
+    2300000: boat
+    2300002: boat_rigger
+    2300004: oar
+    2300006: oar_handle
+    2300008: oar_paddle
+    3300000: boat
+    3300002: boat_rigger
+    3300004: oar
+    3300006: oar_handle
+    3300008: oar_paddle
+    4300000: boat
+    4300002: boat_rigger
+    4300004: oar
+    4300006: oar_handle
+    4300008: oar_paddle
     9500000: //RootNode
   materials:
     importMaterials: 1

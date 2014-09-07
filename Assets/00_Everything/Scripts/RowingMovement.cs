@@ -4,10 +4,10 @@ using System.Collections;
 public class RowingMovement : MonoBehaviour {
 
 	Vector3 velocity = Vector3.zero;
-	Vector3 direction = Vector3.forward;
+	public Vector3 direction = Vector3.forward;
 
-	float force_scale = 1.0f;
-	float drag_scale = 0.33f;
+	public float force_scale = 1.0f;
+	public float drag_scale = 0.33f;
 	
 	// Update is called once per frame
 	void Update () {

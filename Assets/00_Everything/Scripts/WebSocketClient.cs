@@ -34,19 +34,19 @@ public class WebSocketClient : MonoBehaviour {
             };
 
             ws.OnMessage += (sender, e) => {
-                //Debug.Log("[RECEIVED] " + e.Data);
+                Debug.Log("[RECEIVED] " + e.Data);
                 message_json = e.Data;
             };
 
             ws.OnError += (Sender, e) => {
-                Debug.LogError("An error ocurred");
+                Debug.Log("[ERROR] Websocket error");
             };
         }
 
         try {
             ws.Connect();
         } catch(Exception error) {
-            Debug.LogError(error.Message);
+            Debug.Log("[ERROR] " + error.Message);
         }
 	}
 
